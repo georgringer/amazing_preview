@@ -63,6 +63,14 @@ However, some of those are kind of mandatory to have a working backend - therefo
   - sys_language_uid
 ```
 
+## Page module
+
+### Improved rendering of text
+
+By default, text in the pagemodule is being parsed through PHPs `strip_tags()`. The downside is that this removes all the markup and it makes it hard to read the text.
+
+![Pagemodule](Resources/Public/Screenshots/pagemodule.png)
+
 ## Misc
 
 
