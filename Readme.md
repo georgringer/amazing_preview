@@ -1,21 +1,57 @@
-# Preview TYPO3 Extension amazing
-
-> This is a preview of the upcoming TYPO3 extension called `amazing`
+# TYPO3 Extension amazing
 
 This extension improves your daily life as TYPO3 editor and integrator by providing unique features and best practices.
+
+- [How to get it?](#how-to-get-it-)
+  * [Why paid?](#why-paid-)
+  * [Installation](#installation)
+- [Features](#features)
+  * [Simplify the backend](#simplify-the-backend)
+    + [Remove not needed fields from TCA tables](#remove-not-needed-fields-from-tca-tables)
+    + [Improve New Record View](#improve-new-record-view)
+  * [Improve usergroup permission setup](#improve-usergroup-permission-setup)
+    + [Rendering Tables select / modify](#rendering-tables-select---modify)
+    + [Show only relevand exclude fields](#show-only-relevand-exclude-fields)
+    + [Remove exclude configuration from crucial fields](#remove-exclude-configuration-from-crucial-fields)
+  * [Page module](#page-module)
+    + [Improved rendering of text](#improved-rendering-of-text)
+  * [Misc](#misc)
+    + [Improved system news](#improved-system-news)
+    + [Expand and Collapse all tables](#expand-and-collapse-all-tables)
+
+
+## How to get it?
+
+This extension is available for sponsors only. Head over to <https://github.com/sponsors/georgringer/> and select at least the **20 € tier**.
+
+As an alternative I can create an official invoice and propose:
+- 75 € for individuals
+- 150 € for agencies
+
+*Contact me via email,slack or phone if you got any questions!*
+
+### Why paid?
+
+Sponsorships allow me to spend more time for TYPO3, no matter if it is about core development, maintaining extensions or giving support on stackoverflow, github or slack.
+
+### Installation
+
+The extension is provided as zip file to install via Extension Manager or via packagist.com.
+
+## Features
 
 Check out the list of features:
 
 ### Simplify the backend
 
-### Remove not needed fields from TCA tables
+#### Remove not needed fields from TCA tables
 The backend contains tons of fields and most of them are important but if a field is really not needed, it is now hidden
 
 - If a site does only use *one* language, **all** language fields of **all** tables are hidden.
 - If no category record has been created, the category fields created via the `CategoryRegistry` are hidden.
 - If no fe_group record has been created, there is no need for fe_group relations.
 
-### Improve New Record View
+#### Improve New Record View
 
 The view *New Record* renders a list of all records which can be created via list module.
 The list size has been reduced by:
@@ -26,18 +62,18 @@ The list size has been reduced by:
   - `sys_news`: See below
 - The selection of records `fe_users` and `fe_groups` is only shown if the field `Contains Plugin` on the page is set to *Website Users*.
 
-## Improve usergroup permission setup
+### Improve usergroup permission setup
 Setting up permissions for usergroups is always a big hassle.
 This extension will help you save time and reduce mistakes:
 
-### Rendering Tables select / modify
+#### Rendering Tables select / modify
 
 Permissions on tables are splitted up on read (=select) and write (=modify).
 The rendering is improved by rendering both fields next to each other.
 
 ![Simplify select and modify](Resources/Public/Screenshots/begroups_select-modify.png)
 
-### Show only relevand exclude fields
+#### Show only relevand exclude fields
 
 The field **Allowed excludefields** contains a list of *all* tables with all fields.
 In most projects a specific usergroup is created for a specific role, e.g. maintaining events or news records.
@@ -47,7 +83,7 @@ Given the example from above, only the list of fields of those 2 tables are show
 ![Exclude fields](Resources/Public/Screenshots/begroups_exclude.png)
 
 
-### Remove exclude configuration from crucial fields
+#### Remove exclude configuration from crucial fields
 
 Most fields within the core are defined as exclude field and need to be enabled for every editor.
 However, some of those are kind of mandatory to have a working backend - therefore the exclude setting is removed and those fields are available for editors automatically:
@@ -63,24 +99,24 @@ However, some of those are kind of mandatory to have a working backend - therefo
   - sys_language_uid
 ```
 
-## Page module
+### Page module
 
-### Improved rendering of text
+#### Improved rendering of text
 
 By default, text in the pagemodule is being parsed through PHPs `strip_tags()`. The downside is that this removes all the markup and it makes it hard to read the text.
 
 ![Pagemodule](Resources/Public/Screenshots/pagemodule.png)
 
-## Misc
+### Misc
 
 
-### Improved system news
+#### Improved system news
 *10 LTS only*
 
 > System news which are shown below the Backend Login screen and can provide helpful information to other editors.
 
 The news are regular records which need to be created within the backend.
-To make those news really usable, they can now be maintained via `AdditionalConfiguration.php` using
+To make those news really usable, they can now be maintained via `AdditionalConfiguration.php`:
 
 ```php
 $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['amazing']['system_news'] = [
@@ -99,6 +135,6 @@ Advantages are:
 - Deploy and maintain changes just as any code
 - Different news depending on the environment
 
-### Expand/Collapse all tables
+#### Expand and Collapse all tables
 
-A new button in the toolbar of the list module allows to expand and collapse all tables
+A new button in the toolbar of the list module allows expanding and collapsing all tables with one click.
