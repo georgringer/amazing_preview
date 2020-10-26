@@ -5,13 +5,14 @@ This extension improves your daily life as TYPO3 editor and integrator by provid
 - [How to get it?](#how-to-get-it-)
   * [Why paid?](#why-paid-)
   * [Installation](#installation)
+  * [Configuration](#configuration)
 - [Features](#features)
   * [Simplify the backend](#simplify-the-backend)
     + [Remove not needed fields from TCA tables](#remove-not-needed-fields-from-tca-tables)
     + [Improve New Record View](#improve-new-record-view)
   * [Improve usergroup permission setup](#improve-usergroup-permission-setup)
     + [Rendering Tables select / modify](#rendering-tables-select---modify)
-    + [Show only relevand exclude fields](#show-only-relevand-exclude-fields)
+    + [Show only relevant exclude fields](#show-only-relevant-exclude-fields)
     + [Remove exclude configuration from crucial fields](#remove-exclude-configuration-from-crucial-fields)
   * [Page module](#page-module)
     + [Improved rendering of text](#improved-rendering-of-text)
@@ -28,15 +29,33 @@ As an alternative I can create an official invoice and propose:
 - 75 € for individuals
 - 150 € for agencies
 
-*Contact me via email,slack or phone if you got any questions!*
+*The invoice variant is limited for 1 major version*
+
+**Contact me via email,slack or phone if you got any questions!**
 
 ### Why paid?
 
-Sponsorships allow me to spend more time for TYPO3, no matter if it is about core development, maintaining extensions or giving support on stackoverflow, github or slack.
+Sponsorships allow me to spend more time for TYPO3, no matter if it is about core development, maintaining extensions or giving support on stackoverflow, GitHub or Slack.
 
 ### Installation
 
-The extension is provided as zip file to install via Extension Manager or via packagist.com.
+**- t3x**
+
+Use the provided t3x file and upload it in the extension manager.
+
+**- composer**
+
+With the provided token you can simply do:
+
+```bash
+composer config --auth http-basic.georgringer.repo.packagist.com token <your-personal-token>
+composer config repositories.private-packagist composer https://georgringer.repo.packagist.com/<your-personal-username>/
+composer require georgringer/amazing
+```
+
+### Configuration
+
+After finishing the installation, head over to the extension settings and enable all features you want.
 
 ## Features
 
@@ -73,7 +92,7 @@ The rendering is improved by rendering both fields next to each other.
 
 ![Simplify select and modify](Resources/Public/Screenshots/begroups_select-modify.png)
 
-#### Show only relevand exclude fields
+#### Show only relevant exclude fields
 
 The field **Allowed excludefields** contains a list of *all* tables with all fields.
 In most projects a specific usergroup is created for a specific role, e.g. maintaining events or news records.
