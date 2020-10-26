@@ -31,7 +31,7 @@ As an alternative I can create an official invoice and propose:
 
 *The invoice variant is limited for 1 major version*
 
-**Contact me via email,slack or phone if you got any questions!**
+**For access, please contact me via [:email: mail@ringer.it](mail@ringer.it), [twitter](https://twitter.com/georg_ringer) or slack**
 
 ### Why paid?
 
