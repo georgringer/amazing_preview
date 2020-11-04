@@ -29,7 +29,7 @@ As an alternative I can create an official invoice and propose:
 - 75 € for individuals
 - 150 € for agencies
 
-*The invoice variant is limited for 1 major version*
+*The invoice variant is limited for 1 major version **but** for unlimited installations/sites*
 
 **For access or questions, please contact me via [:email: mail@ringer.it](mail@ringer.it), [twitter](https://twitter.com/georg_ringer) or slack**
 
