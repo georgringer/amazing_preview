@@ -1,4 +1,4 @@
-# TYPO3 Extension amazing
+# ✨ TYPO3 Extension amazing ✨
 
 This extension improves your daily life as TYPO3 editor and integrator by providing unique features and best practices.
 
@@ -16,6 +16,7 @@ This extension improves your daily life as TYPO3 editor and integrator by provid
     + [Remove exclude configuration from crucial fields](#remove-exclude-configuration-from-crucial-fields)
   * [Page module](#page-module)
     + [Improved rendering of text](#improved-rendering-of-text)
+    + [Styleable backend layouts](#styleable-backend-layouts)
   * [Misc](#misc)
     + [Improved system news](#improved-system-news)
     + [Expand and Collapse all tables](#expand-and-collapse-all-tables)
@@ -23,15 +24,15 @@ This extension improves your daily life as TYPO3 editor and integrator by provid
 
 ## How to get it?
 
-This extension is available for sponsors only. Head over to <https://github.com/sponsors/georgringer/> and select at least the **20 € tier**.
+3 possible options are possible:
 
-As an alternative I can create an official invoice and propose:
-- 75 € for individuals
-- 150 € for agencies
+| Individual | Agency   | GitHub Sponsor                                                |
+|:-----------|:---------|:--------------------------------------------------------------|
+| 75€ (*)    | 150€ (*) | [at least 20€ tier](https://github.com/sponsors/georgringer/) |
 
-*The invoice variant is limited for 1 major version **but** for unlimited installations/sites*
+**★ (*) One-time price, valid for _unlimited_ projects for one stable version! ★**
 
-**For access or questions, please contact me via [:email: mail@ringer.it](mail@ringer.it), [twitter](https://twitter.com/georg_ringer) or slack**
+*For access or questions, please contact me via [:email: mail@ringer.it](mail@ringer.it), [twitter](https://twitter.com/georg_ringer) or slack*
 
 ### Why paid?
 
@@ -125,6 +126,29 @@ However, some of those are kind of mandatory to have a working backend - therefo
 By default, text in the pagemodule is being parsed through PHPs `strip_tags()`. The downside is that this removes all the markup and it makes it hard to read the text.
 
 ![Pagemodule](Resources/Public/Screenshots/pagemodule.png)
+
+#### Styleable backend layouts
+
+> TYPO3 10 LTS and setting *new fluid-based page module* are required
+
+The backend layout reflects the actual structure of the rendered page in the frontend.
+The ability of using css to style the background of each column helps editors to identify
+those columns which is especially useful if a lot of columns are used.
+
+![Backend Layout styles](Resources/Public/Screenshots/backendlayout-styles.png)
+
+Configuration is done within the TsConfig:
+
+```typo3_typoscript
+columns {
+    1 {
+        name = Lightbox Content
+        styles = background: repeating-linear-gradient(45deg,#606DBC,#606DBC 10px,#465298 10px,#465298 20px);
+        colPos = 4
+        colspan = 12
+    }
+}
+```
 
 ### Misc
 
