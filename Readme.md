@@ -2,16 +2,17 @@
 
 This extension improves your daily life as TYPO3 editor and integrator by providing unique features and best practices.
 
-- [How to get it?](#how-to-get-it-)
-  * [Why paid?](#why-paid-)
+- [How to get it?](#how-to-get-it)
+  * [Why paid?](#why-paid)
   * [Installation](#installation)
   * [Configuration](#configuration)
 - [Features](#features)
   * [Simplify the backend](#simplify-the-backend)
     + [Remove not needed fields from TCA tables](#remove-not-needed-fields-from-tca-tables)
     + [Improve New Record View](#improve-new-record-view)
+    + [Override Table Title](#override-table-title)
   * [Improve usergroup permission setup](#improve-usergroup-permission-setup)
-    + [Rendering Tables select / modify](#rendering-tables-select---modify)
+    + [Rendering Tables select / modify](#rendering-tables-select--modify)
     + [Show only relevant exclude fields](#show-only-relevant-exclude-fields)
     + [Remove exclude configuration from crucial fields](#remove-exclude-configuration-from-crucial-fields)
   * [Page module](#page-module)
@@ -32,7 +33,7 @@ This extension improves your daily life as TYPO3 editor and integrator by provid
 
 **★ (*) One-time price, valid for _unlimited_ projects for one stable version! ★**
 
-*For access or questions, please contact me via [:email: mail@ringer.it](mail@ringer.it), [twitter](https://twitter.com/georg_ringer) or slack*
+*For access or questions, please contact me via [:email: mail@ringer.it](mailto:mail@ringer.it), [twitter](https://twitter.com/georg_ringer) or slack*
 
 ### Why paid?
 
@@ -81,6 +82,25 @@ The list size has been reduced by:
   - `sys_template`: If you still need sys_template records, just use the Template module
   - `sys_news`: See below
 - The selection of records `fe_users` and `fe_groups` is only shown if the field `Contains Plugin` on the page is set to *Website Users*.
+
+#### Override Table Title
+
+If records of an extension (or the core) are used for different purposes it helps editors to label those records properly.
+
+The following screenshot shows a record of EXT:news. By default the title would be `News` but it has been overridden with `Blog`.
+Other examples could be to call records of `tt_address` **Contact** or **Sales Person**.
+
+![Override Table Title](Resources/Public/Screenshots/recordlist-title.png)
+
+*Configuration*: By using the following PageTsConfig the title can be changed for any page:
+
+```typo3_typoscript
+mod.web_list.alternativeTableTitles {
+    tx_news_domain_model_news = Blog
+    tt_address = EXT:site_package/Resources/Private/Language/locallang.xlf:ttAddress.title
+}
+```
+
 
 ### Improve usergroup permission setup
 Setting up permissions for usergroups is always a big hassle.
