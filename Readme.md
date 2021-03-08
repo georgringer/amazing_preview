@@ -19,6 +19,7 @@ This extension improves your daily life as TYPO3 editor and integrator by provid
     + [Improved rendering of text](#improved-rendering-of-text)
     + [Styleable backend layouts](#styleable-backend-layouts)
   * [Misc](#misc)
+    + [Value Picker for Site language locale](#value-picker-for-site-language-locale)
     + [Improved system news](#improved-system-news)
     + [Expand and Collapse all tables](#expand-and-collapse-all-tables)
 
@@ -171,6 +172,13 @@ columns {
 ```
 
 ### Misc
+
+#### Value Picker for Site language locale
+
+Having a value picker makes it easier and less error prone to setup the correct locale of a site language.
+In opposite to a dropdown, a value picker can be used to suggest items and it is still possible to use completly different values.
+
+![Value Picker](Resources/Public/Screenshots/locale.png)
 
 
 #### Improved system news
